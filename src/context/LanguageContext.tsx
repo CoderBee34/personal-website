@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { Language } from '../types';
@@ -16,15 +18,23 @@ interface LanguageProviderProps {
 const STORAGE_KEY = 'preferred-language';
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return (stored === 'en' || stored === 'tr') ? stored : 'en';
-  });
+  const [language, setLanguageState] = useState<Language>('en');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, language);
-    document.documentElement.lang = language;
-  }, [language]);
+    setMounted(true);
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === 'en' || stored === 'tr') {
+      setLanguageState(stored);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem(STORAGE_KEY, language);
+      document.documentElement.lang = language;
+    }
+  }, [language, mounted]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);

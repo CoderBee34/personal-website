@@ -1,3 +1,5 @@
+'use client';
+
 import { Cpu, Code, Server, Database } from 'lucide-react';
 import { RevealOnScroll } from '../common/RevealOnScroll';
 import { SkillTag } from '../common/SkillTag';

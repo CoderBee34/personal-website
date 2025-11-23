@@ -1,3 +1,5 @@
+'use client';
+
 import { Briefcase } from 'lucide-react';
 import { RevealOnScroll } from '../common/RevealOnScroll';
 import { ExperienceCard } from '../cards/ExperienceCard';

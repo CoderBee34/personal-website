@@ -1,3 +1,5 @@
+'use client';
+
 import { Terminal } from 'lucide-react';
 import { RevealOnScroll } from '../common/RevealOnScroll';
 import { ProjectCard } from '../cards/ProjectCard';

@@ -1,3 +1,5 @@
+'use client';
+
 import { User } from 'lucide-react';
 import { RevealOnScroll } from '../common/RevealOnScroll';
 import { useTranslation } from '../../hooks/useTranslation';

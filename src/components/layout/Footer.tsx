@@ -1,3 +1,5 @@
+'use client';
+
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '../../constants/data';
 import { useTranslation } from '../../hooks/useTranslation';

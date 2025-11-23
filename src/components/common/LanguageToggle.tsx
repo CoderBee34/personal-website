@@ -1,3 +1,5 @@
+'use client';
+
 import { Languages } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import type { Language } from '../../types';

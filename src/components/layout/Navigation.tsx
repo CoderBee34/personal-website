@@ -1,3 +1,5 @@
+'use client';
+
 import { SOCIAL_LINKS } from '../../constants/data';
 import { useTranslation } from '../../hooks/useTranslation';
 import { LanguageToggle } from '../common/LanguageToggle';

@@ -1,3 +1,5 @@
+'use client';
+
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { RevealOnScroll } from '../common/RevealOnScroll';
 import { SOCIAL_LINKS } from '../../constants/data';
