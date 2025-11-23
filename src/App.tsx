@@ -1,3 +1,4 @@
+import { LanguageProvider } from './context/LanguageContext';
 import { Navigation } from './components/layout/Navigation';
 import { Footer } from './components/layout/Footer';
 import { BackgroundGradient } from './components/layout/BackgroundGradient';
@@ -8,27 +9,25 @@ import { ProjectsSection } from './components/sections/ProjectsSection';
 import { SkillsSection } from './components/sections/SkillsSection';
 import { useActiveSection } from './hooks/useActiveSection';
 
-/**
- * ALI ILAN PORTFOLIO WEBSITE
- * Refactored with clean code principles and best practices
- */
 
 export default function App() {
   const { activeSection, scrollToSection } = useActiveSection('home');
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30 selection:text-blue-200">
-      <BackgroundGradient />
-      <Navigation activeSection={activeSection} onNavigate={scrollToSection} />
+    <LanguageProvider>
+      <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30 selection:text-blue-200">
+        <BackgroundGradient />
+        <Navigation activeSection={activeSection} onNavigate={scrollToSection} />
 
-      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-24 pb-20">
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <Footer />
-      </main>
-    </div>
+        <main className="relative z-10 max-w-5xl mx-auto px-6 pt-24 pb-20">
+          <HeroSection />
+          <AboutSection />
+          <ExperienceSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <Footer />
+        </main>
+      </div>
+    </LanguageProvider>
   );
 }

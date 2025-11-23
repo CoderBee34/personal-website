@@ -1,8 +1,11 @@
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { RevealOnScroll } from '../common/RevealOnScroll';
 import { SOCIAL_LINKS } from '../../constants/data';
+import { useTranslation } from '../../hooks/useTranslation';
 
 export const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="home" className="min-h-[90vh] flex flex-col justify-center items-start pt-10">
       <RevealOnScroll>
@@ -11,18 +14,16 @@ export const HeroSection = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
           </span>
-          Available for new opportunities
+          {t.hero.availableBadge}
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Building intelligent <br />
+          {t.hero.title} <br />
           <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            web solutions.
+            {t.hero.titleHighlight}
           </span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl mb-8 leading-relaxed">
-          I'm Ali, a Senior Computer Science student and Full-Stack Developer specialized in AI.
-          I build scalable microservices, intuitive frontends, and intelligent systems using .NET
-          Core, React, and Artificial Intelligence.
+          {t.hero.description}
         </p>
 
         <div className="flex flex-wrap gap-4">
@@ -33,7 +34,7 @@ export const HeroSection = () => {
             className="flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <Github size={20} />
-            <span>GitHub</span>
+            <span>{t.hero.github}</span>
           </a>
           <a
             href={SOCIAL_LINKS.linkedin}
@@ -42,14 +43,14 @@ export const HeroSection = () => {
             className="flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <Linkedin size={20} />
-            <span>LinkedIn</span>
+            <span>{t.hero.linkedin}</span>
           </a>
           <a
             href={SOCIAL_LINKS.email}
             className="flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors border border-slate-700"
           >
             <Mail size={20} />
-            <span>Email</span>
+            <span>{t.hero.email}</span>
           </a>
         </div>
       </RevealOnScroll>

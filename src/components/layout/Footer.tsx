@@ -1,11 +1,14 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '../../constants/data';
+import { useTranslation } from '../../hooks/useTranslation';
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="pt-20 pb-10 border-t border-slate-800 text-center">
       <p className="text-slate-500 text-sm">
-        © {new Date().getFullYear()} Ali İlan. Built with React & Tailwind.
+        © {new Date().getFullYear()} {t.footer.copyright}
       </p>
       <div className="flex justify-center gap-6 mt-4">
         <a

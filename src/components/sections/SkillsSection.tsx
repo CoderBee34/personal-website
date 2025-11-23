@@ -1,7 +1,8 @@
-import { Cpu } from 'lucide-react';
+import { Cpu, Code, Server, Database } from 'lucide-react';
 import { RevealOnScroll } from '../common/RevealOnScroll';
 import { SkillTag } from '../common/SkillTag';
 import { SKILL_CATEGORIES } from '../../constants/data';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const getColorClass = (color: string) => {
   const colors: Record<string, string> = {
@@ -13,16 +14,24 @@ const getColorClass = (color: string) => {
 };
 
 export const SkillsSection = () => {
+  const { t } = useTranslation();
+
+  const categories = [
+    { title: t.skills.categories.languages, icon: Code, color: 'purple', skills: SKILL_CATEGORIES[0].skills },
+    { title: t.skills.categories.frameworks, icon: Server, color: 'green', skills: SKILL_CATEGORIES[1].skills },
+    { title: t.skills.categories.databases, icon: Database, color: 'orange', skills: SKILL_CATEGORIES[2].skills },
+  ];
+
   return (
     <section id="skills" className="py-20">
       <RevealOnScroll>
         <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
           <Cpu className="text-blue-500" />
-          Technical Skills
+          {t.skills.title}
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {SKILL_CATEGORIES.map((category, index) => {
+          {categories.map((category, index) => {
             const Icon = category.icon;
             return (
               <div key={index} className="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
