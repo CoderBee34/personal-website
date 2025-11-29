@@ -57,7 +57,7 @@ export const en: Translation = {
         company: 'Gelecek Varlık Yönetimi',
         location: 'Istanbul, Turkey',
         type: 'Internship',
-        date: 'July 2025 - present',
+        date: 'July 2025 - Feb 2025',
         description: [
           'Developed a Backend microservice using .NET Core (N-Tier architecture) with JWT token authentication and SQL Server.',
           'Built the Frontend using React and TypeScript with modern libraries including Material UI and Tanstack Query.',
